@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utku\\Desktop\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {}
+    "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utku\\Desktop\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {
+    "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utku\\Desktop\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
+        "projectUniqueName": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
         "projectName": "RTROPToLogoIntegration",
-        "projectPath": "C:\\Users\\Utku\\Desktop\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
+        "projectPath": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
         "packagesPath": "C:\\Users\\Utku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utku\\Desktop\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\obj\\",
+        "outputPath": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -58,6 +58,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.4.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.22, )"
@@ -65,6 +73,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -80,13 +92,25 @@
               "target": "Package",
               "version": "[8.0.22, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.6.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
             },
-            "Ulid": {
+            "WolverineFx": {
               "target": "Package",
-              "version": "[1.4.1, )"
+              "version": "[5.15.0, )"
             }
           },
           "imports": [
@@ -108,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
