@@ -12,5 +12,16 @@ namespace RTROPToLogoIntegration.Infrastructure.Identity
         public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
         {
         }
+
+        public DbSet<RTROPToLogoIntegration.Domain.Entities.LogIncomingRequest> LogIncomingRequests { get; set; }
+        public DbSet<RTROPToLogoIntegration.Domain.Entities.ApplicationLog> Logs { get; set; } // Serilog Logs table
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<RTROPToLogoIntegration.Domain.Entities.LogIncomingRequest>()
+                .HasIndex(l => l.TransactionId);
+        }
     }
 }

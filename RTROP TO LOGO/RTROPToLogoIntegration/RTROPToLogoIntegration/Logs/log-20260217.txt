@@ -407,3 +407,22 @@ System.Exception: Logo Servis Hatası: {"Message":"The request is invalid.","Mod
 2026-02-17 23:01:11.948 +03:00 [INF] Searching assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null for Wolverine message handlers
 2026-02-17 23:01:12.000 +03:00 [INF] Wolverine assigned node id for envelope persistence is 1877648568
 2026-02-17 23:01:12.019 +03:00 [INF] Started message listening at "stub://replies/"
+2026-02-17 23:48:11.037 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-02-17 23:48:11.240 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 248.1364 ms
+2026-02-17 23:48:18.404 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 14.4466 ms
+2026-02-17 23:48:24.748 +03:00 [INF] Stopped message listener at "stub://replies/"
+2026-02-17 23:48:41.153 +03:00 [INF] Uygulama başlatılıyor...
+2026-02-17 23:48:42.742 +03:00 [INF] Exporting Open Telemetry metrics from Wolverine with name Wolverine:RTROPToLogoIntegration, version 5.15.0.0
+2026-02-17 23:48:42.777 +03:00 [INF] Starting Wolverine messaging for application assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2026-02-17 23:48:42.778 +03:00 [INF] The Wolverine code generation mode is Dynamic. This is suitable for development, but you may want to opt into other options for production usage to reduce start up time and resource utilization.
+2026-02-17 23:48:42.778 +03:00 [INF] See https://wolverine.netlify.app/guide/codegen.html for more information
+2026-02-17 23:48:42.790 +03:00 [INF] Searching assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null for Wolverine message handlers
+2026-02-17 23:48:42.877 +03:00 [INF] Wolverine assigned node id for envelope persistence is 1018108161
+2026-02-17 23:48:42.938 +03:00 [INF] Started message listening at "stub://replies/"
+2026-02-17 23:49:24.351 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-02-17 23:49:24.513 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 194.6579 ms
+2026-02-17 23:49:35.140 +03:00 [INF] Kullanıcı başarıyla giriş yaptı. User: Admin
+2026-02-17 23:49:35.189 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1117.0518 ms
+2026-02-17 23:50:04.964 +03:00 [INF] Logo MRP Kaydı Başarılı. Fiş No: MRP202602-000001
+2026-02-17 23:50:04.966 +03:00 [INF] MRP İşlemi Tamamlandı. 5 adet ürün işlendi. Fiş No: MRP202602-000001
+2026-02-17 23:50:05.002 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 200 in 14799.4532 ms

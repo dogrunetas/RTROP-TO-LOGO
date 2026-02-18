@@ -20,6 +20,7 @@
           "Serilog.Sinks.File": "7.0.0",
           "Serilog.Sinks.MSSqlServer": "6.6.1",
           "Swashbuckle.AspNetCore": "6.6.2",
+          "Ulid": "1.4.1",
           "WolverineFx": "5.15.0"
         },
         "runtime": {
@@ -1768,6 +1769,14 @@
       },
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.ValueTuple/4.5.0": {},
+      "Ulid/1.4.1": {
+        "runtime": {
+          "lib/net8.0/Ulid.dll": {
+            "assemblyVersion": "1.4.1.0",
+            "fileVersion": "1.4.1.0"
+          }
+        }
+      },
       "WolverineFx/5.15.0": {
         "dependencies": {
           "JasperFx": "1.17.2",
@@ -2724,6 +2733,13 @@
       "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "Ulid/1.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V6crLJ8a29raWeNwxYGfH9RTKA3H0nR0D9LAGzN3KtEsbiiaWkUjDor6OT5Oz7pxCK+NaY2hu2FLoYEOa8oCkA==",
+      "path": "ulid/1.4.1",
+      "hashPath": "ulid.1.4.1.nupkg.sha512"
     },
     "WolverineFx/5.15.0": {
       "type": "package",

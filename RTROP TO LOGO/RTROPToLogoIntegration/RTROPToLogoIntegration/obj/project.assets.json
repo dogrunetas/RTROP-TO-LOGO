@@ -2690,6 +2690,19 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "Ulid/1.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Ulid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Ulid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "WolverineFx/5.15.0": {
         "type": "package",
         "dependencies": {
@@ -7396,6 +7409,28 @@
         "version.txt"
       ]
     },
+    "Ulid/1.4.1": {
+      "sha512": "V6crLJ8a29raWeNwxYGfH9RTKA3H0nR0D9LAGzN3KtEsbiiaWkUjDor6OT5Oz7pxCK+NaY2hu2FLoYEOa8oCkA==",
+      "type": "package",
+      "path": "ulid/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Ulid.dll",
+        "lib/net6.0/Ulid.xml",
+        "lib/net7.0/Ulid.dll",
+        "lib/net7.0/Ulid.xml",
+        "lib/net8.0/Ulid.dll",
+        "lib/net8.0/Ulid.xml",
+        "lib/netstandard2.0/Ulid.dll",
+        "lib/netstandard2.0/Ulid.xml",
+        "lib/netstandard2.1/Ulid.dll",
+        "lib/netstandard2.1/Ulid.xml",
+        "ulid.1.4.1.nupkg.sha512",
+        "ulid.nuspec"
+      ]
+    },
     "WolverineFx/5.15.0": {
       "sha512": "H08OJSxWpFaTReZtNsFVBiNfxToOjOSnu3GaPyFhoUrS2WWwiTiHqF/r6gAToDQu7Htr9se/fRKsbNRBNDXtBg==",
       "type": "package",
@@ -7428,6 +7463,7 @@
       "Serilog.Sinks.File >= 7.0.0",
       "Serilog.Sinks.MSSqlServer >= 6.6.1",
       "Swashbuckle.AspNetCore >= 6.6.2",
+      "Ulid >= 1.4.1",
       "WolverineFx >= 5.15.0"
     ]
   },
@@ -7540,6 +7576,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"
+          },
+          "Ulid": {
+            "target": "Package",
+            "version": "[1.4.1, )"
           },
           "WolverineFx": {
             "target": "Package",
