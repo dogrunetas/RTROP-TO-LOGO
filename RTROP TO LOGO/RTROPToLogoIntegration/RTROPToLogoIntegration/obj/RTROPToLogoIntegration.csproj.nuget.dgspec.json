@@ -1,40 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {}
+    "/app/RTROP TO LOGO/RTROPToLogoIntegration/RTROPToLogoIntegration/RTROPToLogoIntegration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj": {
+    "/app/RTROP TO LOGO/RTROPToLogoIntegration/RTROPToLogoIntegration/RTROPToLogoIntegration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
+        "projectUniqueName": "/app/RTROP TO LOGO/RTROPToLogoIntegration/RTROPToLogoIntegration/RTROPToLogoIntegration.csproj",
         "projectName": "RTROPToLogoIntegration",
-        "projectPath": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\RTROPToLogoIntegration.csproj",
-        "packagesPath": "C:\\Users\\Utku\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utku\\Documents\\GitHub\\RTROP-TO-LOGO\\RTROP TO LOGO\\RTROPToLogoIntegration\\RTROPToLogoIntegration\\obj\\",
+        "projectPath": "/app/RTROP TO LOGO/RTROPToLogoIntegration/RTROPToLogoIntegration/RTROPToLogoIntegration.csproj",
+        "packagesPath": "/home/jules/.nuget/packages/",
+        "outputPath": "/app/RTROP TO LOGO/RTROPToLogoIntegration/RTROPToLogoIntegration/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
-          "C:\\Program Files\\DevExpress 24.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Utku\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/jules/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\DevExpress 24.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.nuget.org/api/v2/": {}
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -52,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -128,6 +115,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -136,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

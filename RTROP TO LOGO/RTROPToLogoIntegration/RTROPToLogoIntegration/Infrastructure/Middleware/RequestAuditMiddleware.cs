@@ -25,45 +25,70 @@ namespace RTROPToLogoIntegration.Infrastructure.Middleware
             // 3. SERILOG CONTEXT (Bu blok içindeki tüm loglara ID otomatik eklenir)
             using (LogContext.PushProperty("TransactionId", transactionId))
             {
-                // Sadece POST ve PUT isteklerini logla
-                if (context.Request.Method == HttpMethods.Post || context.Request.Method == HttpMethods.Put)
+                bool shouldLogBody = context.Request.Method == HttpMethods.Post || context.Request.Method == HttpMethods.Put;
+
+                if (shouldLogBody)
                 {
                     // Body Okuma Hazırlığı (Girişte)
                     context.Request.EnableBuffering();
                 }
 
-                // 4. SONRAKİ MIDDLEWARE'E GEÇ (Controller çalışsın, Auth olsun)
-                await _next(context);
-
-                // 5. İŞLEM SONRASI LOGLAMA (Post-Execution)
-                if (context.Request.Method == HttpMethods.Post || context.Request.Method == HttpMethods.Put)
+                try
                 {
-                    try
+                    // 4. SONRAKİ MIDDLEWARE'E GEÇ (Controller çalışsın, Auth olsun)
+                    await _next(context);
+                }
+                finally
+                {
+                    // 5. İŞLEM SONRASI LOGLAMA (Post-Execution or On Exception)
+                    // Finally ensures logging happens even if _next throws an exception (Blind Spot Fix)
+                    if (shouldLogBody)
                     {
-                        // Body Stream'i başa sarıp oku
+                        await LogRequestSafeAsync(context, auditRepository, transactionId);
+                    }
+                }
+            }
+        }
+
+        private async Task LogRequestSafeAsync(HttpContext context, AuditRepository auditRepository, string transactionId)
+        {
+            try
+            {
+                var endpoint = context.Request.Path.ToString();
+                string body = "";
+
+                // Sensitive Data Exposure Check
+                if (endpoint.Contains("login", StringComparison.OrdinalIgnoreCase) ||
+                    endpoint.Contains("auth", StringComparison.OrdinalIgnoreCase))
+                {
+                    body = "[SENSITIVE DATA HIDDEN]";
+                }
+                else
+                {
+                    // Body Stream'i başa sarıp oku
+                    if (context.Request.Body.CanSeek)
+                    {
                         context.Request.Body.Position = 0;
                         using (var reader = new StreamReader(context.Request.Body, Encoding.UTF8, detectEncodingFromByteOrderMarks: false, leaveOpen: true))
                         {
-                            var body = await reader.ReadToEndAsync();
-                            
+                            body = await reader.ReadToEndAsync();
                             // Stream'i tekrar başa sar (Her ihtimale karşı)
                             context.Request.Body.Position = 0;
-
-                            // UserId Yakala (Auth middleware çalıştıysa doludur)
-                            var userId = context.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                            
-                            var endpoint = context.Request.Path;
-                            var method = context.Request.Method;
-                            var clientIp = context.Connection.RemoteIpAddress?.ToString();
-
-                            await auditRepository.LogRequestAsync(transactionId, endpoint, method, body, clientIp, userId);
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Audit Log Hatası: {ex.Message}");
-                    }
                 }
+
+                // UserId Yakala (Auth middleware çalıştıysa doludur)
+                var userId = context.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var method = context.Request.Method;
+                var clientIp = context.Connection.RemoteIpAddress?.ToString();
+
+                await auditRepository.LogRequestAsync(transactionId, endpoint, method, body, clientIp, userId);
+            }
+            catch (Exception ex)
+            {
+                // Failsafe: Audit failure should not crash the user request
+                Console.WriteLine($"Audit Log Hatası: {ex.Message}");
             }
         }
     }
