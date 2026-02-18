@@ -15,6 +15,7 @@ using RTROPToLogoIntegration.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
 using Wolverine;
 using Microsoft.Data.SqlClient; // SQL Client ekle
+using RTROPToLogoIntegration.Infrastructure.Middleware; // Middleware namespace is required
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -121,6 +122,7 @@ try
     builder.Services.AddScoped<StockRepository>();
     builder.Services.AddScoped<LogoClientService>();
     builder.Services.AddScoped<ExcelService>();
+    builder.Services.AddScoped<AuditRepository>(); // Audit Repository Kaydı
 
     // Wolverine Yapılandırması
     builder.Host.UseWolverine(opts =>
@@ -166,6 +168,11 @@ try
     }
 
     app.UseHttpsRedirection();
+
+    // Audit Middleware (Auth'dan önce çalışmalı ki 401 alan istekleri de loglayabilsin, veya auth sonrası sadece geçerli istekleri loglayabilir. 
+    // İsteğin "Kanıt Niteliği" için genelde en dışa yakın olması iyidir ama Body okuma maliyeti yüzünden Auth arkasına da konabilir.
+    // Kullanıcı talebi: "Middleware'i app.UseAuthentication() satırından ÖNCE ekle."
+    app.UseMiddleware<RequestAuditMiddleware>();
 
     app.UseAuthentication();
     app.UseAuthorization();

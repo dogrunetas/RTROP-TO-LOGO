@@ -255,3 +255,4 @@ C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegratio
 C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegration\RTROPToLogoIntegration\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegration\RTROPToLogoIntegration\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegration\RTROPToLogoIntegration\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegration\RTROPToLogoIntegration\bin\Debug\net8.0\Ulid.dll
