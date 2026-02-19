@@ -1,9 +1,0 @@
-2026-02-19 13:54:41.517 +03:00 [INF] Uygulama başlatılıyor...
-2026-02-19 13:54:45.176 +03:00 [INF] Exporting Open Telemetry metrics from Wolverine with name Wolverine:RTROPToLogoIntegration, version 5.15.0.0
-2026-02-19 13:54:45.277 +03:00 [INF] Starting Wolverine messaging for application assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-2026-02-19 13:54:45.277 +03:00 [INF] The Wolverine code generation mode is Dynamic. This is suitable for development, but you may want to opt into other options for production usage to reduce start up time and resource utilization.
-2026-02-19 13:54:45.278 +03:00 [INF] See https://wolverine.netlify.app/guide/codegen.html for more information
-2026-02-19 13:54:45.283 +03:00 [INF] Searching assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null for Wolverine message handlers
-2026-02-19 13:54:45.306 +03:00 [INF] Wolverine assigned node id for envelope persistence is 1903947760
-2026-02-19 13:54:45.323 +03:00 [INF] Started message listening at "stub://replies/"
-2026-02-19 13:54:49.395 +03:00 [INF] Stopped message listener at "stub://replies/"
