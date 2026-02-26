@@ -17,6 +17,8 @@ namespace RTROPToLogoIntegration.Infrastructure.Identity
         public DbSet<RTROPToLogoIntegration.Domain.Entities.LogIncomingRequest> LogIncomingRequests { get; set; }
         public DbSet<RTROPToLogoIntegration.Domain.Entities.ApplicationLog> Logs { get; set; } // Serilog Logs table
         public DbSet<MrpItemParameter> MrpItemParameters { get; set; }
+        public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
+        public DbSet<UserTokenSecurity> UserTokenSecurities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +34,27 @@ namespace RTROPToLogoIntegration.Infrastructure.Identity
                       .HasDatabaseName("IX_MRP_ITEM_PARAMETERS_FirmNo_ItemID");
 
                 entity.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            builder.Entity<UserRefreshToken>(entity =>
+            {
+                entity.HasIndex(e => e.Token)
+                      .IsUnique()
+                      .HasDatabaseName("IX_USER_REFRESH_TOKENS_Token");
+
+                entity.HasIndex(e => e.UserId)
+                      .HasDatabaseName("IX_USER_REFRESH_TOKENS_UserId");
+
+                entity.Property(e => e.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
+            });
+
+            builder.Entity<UserTokenSecurity>(entity =>
+            {
+                entity.HasIndex(e => e.UserId)
+                      .IsUnique()
+                      .HasDatabaseName("IX_USER_TOKEN_SECURITY_UserId");
+
                 entity.Property(e => e.UpdatedAt).HasDefaultValueSql("GETUTCDATE()");
             });
         }

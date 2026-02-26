@@ -1,0 +1,67 @@
+2026-02-26 11:41:38.852 +03:00 [INF] Uygulama başlatılıyor...
+2026-02-26 11:41:41.482 +03:00 [FTL] Uygulama beklenmeyen bir hata ile sonlandı.
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at System.Diagnostics.DiagnosticSource.Write[T](String name, T value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\Utku\Documents\GitHub\RTROP-TO-LOGO\RTROP TO LOGO\RTROPToLogoIntegration\RTROPToLogoIntegration\Program.cs:line 185
+2026-02-26 11:45:16.608 +03:00 [INF] Uygulama başlatılıyor...
+2026-02-26 11:45:17.485 +03:00 [INF] Exporting Open Telemetry metrics from Wolverine with name Wolverine:RTROPToLogoIntegration, version 5.15.0.0
+2026-02-26 11:45:17.537 +03:00 [INF] Starting Wolverine messaging for application assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2026-02-26 11:45:17.537 +03:00 [INF] The Wolverine code generation mode is Dynamic. This is suitable for development, but you may want to opt into other options for production usage to reduce start up time and resource utilization.
+2026-02-26 11:45:17.537 +03:00 [INF] See https://wolverine.netlify.app/guide/codegen.html for more information
+2026-02-26 11:45:17.545 +03:00 [INF] Searching assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null for Wolverine message handlers
+2026-02-26 11:45:17.575 +03:00 [INF] Wolverine assigned node id for envelope persistence is 1599462798
+2026-02-26 11:45:17.591 +03:00 [INF] Started message listening at "stub://replies/"
+2026-02-26 11:45:46.553 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-02-26 11:45:47.247 +03:00 [INF] Yeni token çifti üretildi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1
+2026-02-26 11:45:47.249 +03:00 [INF] Kullanıcı başarıyla giriş yaptı. User: Admin
+2026-02-26 11:45:47.326 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 787.2533 ms
+2026-02-26 11:46:14.055 +03:00 [INF] HTTP POST /api/Auth/refresh responded 400 in 124.6730 ms
+2026-02-26 11:46:24.535 +03:00 [INF] Token başarıyla yenilendi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1
+2026-02-26 11:46:24.539 +03:00 [INF] HTTP POST /api/Auth/refresh responded 200 in 138.7741 ms
+2026-02-26 11:46:26.834 +03:00 [WRN] GÜVENLIK ALARMI: Revoke edilmiş refresh token tekrar kullanıldı! UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1. Tüm token'lar revoke ediliyor.
+2026-02-26 11:46:26.854 +03:00 [INF] Tüm token'lar revoke edildi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84
+2026-02-26 11:46:26.860 +03:00 [INF] HTTP POST /api/Auth/refresh responded 401 in 29.5263 ms
+2026-02-26 12:07:35.245 +03:00 [INF] Yeni token çifti üretildi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1
+2026-02-26 12:07:35.245 +03:00 [INF] Kullanıcı başarıyla giriş yaptı. User: Admin
+2026-02-26 12:07:35.250 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 134.6406 ms
+2026-02-26 12:07:50.523 +03:00 [WRN] Token invalidated: iat "2026-02-26T09:07:35.0000000Z" < TokensRevokedAt "2026-02-26T09:07:35.2366036". UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84
+2026-02-26 12:07:50.539 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 57.9830 ms
+2026-02-26 12:07:53.766 +03:00 [WRN] Token invalidated: iat "2026-02-26T09:07:35.0000000Z" < TokensRevokedAt "2026-02-26T09:07:35.2366036". UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84
+2026-02-26 12:07:53.770 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 6.4724 ms
+2026-02-26 12:07:57.594 +03:00 [INF] Yeni token çifti üretildi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1
+2026-02-26 12:07:57.594 +03:00 [INF] Kullanıcı başarıyla giriş yaptı. User: Admin
+2026-02-26 12:07:57.597 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 105.1529 ms
+2026-02-26 12:08:07.851 +03:00 [WRN] Token invalidated: iat "2026-02-26T09:07:57.0000000Z" < TokensRevokedAt "2026-02-26T09:07:57.5857789". UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84
+2026-02-26 12:08:07.857 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 9.3429 ms
+2026-02-26 12:08:16.011 +03:00 [WRN] Token invalidated: iat "2026-02-26T09:07:57.0000000Z" < TokensRevokedAt "2026-02-26T09:07:57.5857789". UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84
+2026-02-26 12:08:16.013 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 401 in 3.9719 ms
+2026-02-26 12:10:27.616 +03:00 [INF] Stopped message listener at "stub://replies/"
+2026-02-26 13:00:04.288 +03:00 [INF] Uygulama başlatılıyor...
+2026-02-26 13:00:05.654 +03:00 [INF] Exporting Open Telemetry metrics from Wolverine with name Wolverine:RTROPToLogoIntegration, version 5.15.0.0
+2026-02-26 13:00:05.694 +03:00 [INF] Starting Wolverine messaging for application assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2026-02-26 13:00:05.695 +03:00 [INF] The Wolverine code generation mode is Dynamic. This is suitable for development, but you may want to opt into other options for production usage to reduce start up time and resource utilization.
+2026-02-26 13:00:05.695 +03:00 [INF] See https://wolverine.netlify.app/guide/codegen.html for more information
+2026-02-26 13:00:05.706 +03:00 [INF] Searching assembly RTROPToLogoIntegration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null for Wolverine message handlers
+2026-02-26 13:00:05.736 +03:00 [INF] Wolverine assigned node id for envelope persistence is -1395524110
+2026-02-26 13:00:05.754 +03:00 [INF] Started message listening at "stub://replies/"
+2026-02-26 13:31:36.133 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-02-26 13:31:36.950 +03:00 [INF] Yeni token çifti üretildi. UserId: ce02ebb6-7098-450e-a1ff-e15789b89e84, IP: ::1
+2026-02-26 13:31:36.952 +03:00 [INF] Kullanıcı başarıyla giriş yaptı. User: Admin
+2026-02-26 13:31:37.031 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 915.6943 ms
+2026-02-26 13:31:50.250 +03:00 [INF] Utilizing service location for Message Handler for RTROPToLogoIntegration.Application.Features.MRP.Commands.ProcessMrpCommand for Service RTROPToLogoIntegration.Infrastructure.Persistence.MrpItemParameterRepository: 
+Dependency: Descriptor: ServiceType: RTROPToLogoIntegration.Infrastructure.Identity.AppIdentityDbContext Lifetime: Scoped ImplementationType: RTROPToLogoIntegration.Infrastructure.Identity.AppIdentityDbContext
+
+Dependency: Descriptor: ServiceType: Microsoft.EntityFrameworkCore.DbContextOptions`1[RTROPToLogoIntegration.Infrastructure.Identity.AppIdentityDbContext] Lifetime: Scoped ImplementationFactory: System.Object <AddCoreServices>b__0(System.IServiceProvider)
+The service registration for Microsoft.EntityFrameworkCore.DbContextOptions<RTROPToLogoIntegration.Infrastructure.Identity.AppIdentityDbContext> is an 'opaque' lambda factory with the Scoped lifetime and requires service location
+
+. See https://wolverinefx.net/guide/codegen.html
+2026-02-26 13:32:13.223 +03:00 [INF] Logo MRP Kaydı Başarılı. Fiş No: MRP202602-000020
+2026-02-26 13:32:13.224 +03:00 [INF] MRP İşlemi Tamamlandı. 5 adet ürün işlendi. Fiş No: MRP202602-000020
+2026-02-26 13:32:13.252 +03:00 [INF] HTTP POST /api/Mrp/calculate-json responded 200 in 26465.0929 ms
+2026-02-26 13:33:16.764 +03:00 [INF] Stopped message listener at "stub://replies/"
