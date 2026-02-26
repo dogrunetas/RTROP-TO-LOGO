@@ -7,6 +7,8 @@ using RTROPToLogoIntegration.Infrastructure.Identity; // Updated Namespace
 using RTROPToLogoIntegration.Infrastructure.Persistence;
 using RTROPToLogoIntegration.Middlewares;
 using Serilog;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.HttpOverrides;
 using RTROPToLogoIntegration.Infrastructure.Extensions;
@@ -112,6 +114,46 @@ try
             ValidIssuer = jwtSettings["Issuer"],
             ValidAudience = jwtSettings["Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]))
+        };
+
+        // IMMEDIATE TOKEN INVALIDATION
+        // Her authenticated istekte JWT'nin iat (issued at) claim'ini
+        // DB'deki TokensRevokedAt ile karşılaştırır.
+        // Token, revoke tarihinden önce üretilmişse anında 401 döner.
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = async context =>
+            {
+                var userId = context.Principal?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    context.Fail("UserId claim bulunamadı.");
+                    return;
+                }
+
+                var dbContext = context.HttpContext.RequestServices
+                    .GetRequiredService<AppIdentityDbContext>();
+
+                var security = await dbContext.UserTokenSecurities
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(s => s.UserId == userId);
+
+                if (security != null)
+                {
+                    var iatClaim = context.Principal?.FindFirst(JwtRegisteredClaimNames.Iat)?.Value;
+                    if (iatClaim != null && long.TryParse(iatClaim, out var iatUnix))
+                    {
+                        var tokenIssuedAt = DateTimeOffset.FromUnixTimeSeconds(iatUnix).UtcDateTime;
+                        if (tokenIssuedAt < security.TokensRevokedAt)
+                        {
+                            Log.Warning("Token invalidated: iat {IssuedAt} < TokensRevokedAt {RevokedAt}. UserId: {UserId}",
+                                tokenIssuedAt, security.TokensRevokedAt, userId);
+                            context.Fail("Token has been revoked.");
+                            return;
+                        }
+                    }
+                }
+            }
         };
     });
 
